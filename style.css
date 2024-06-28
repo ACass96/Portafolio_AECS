@@ -7,13 +7,46 @@
     text-decoration: none;
     list-style: none;
 }
+
+@media(max-width:576px){ /*Acomodo para cel*/
+    .header .btn{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        display: none;
+    }
+    .navbar .active{
+        display: block;    
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        
+    }
+}
+
+@media(min-width:768px){  /*Acomodo para tablet*/
+     .header .btn{
+        display: none;
+    }
+   
+
+}
+
+@media(min-width:900px){ /*Acomodo para pantalla grande*/
+    .header .btn{
+        display: none;
+    }
+}
 /* Sección de presentación */
 .header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 60px;
     padding: 35px, 12%;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
@@ -40,6 +73,7 @@ span{
 }
 
 .navbar a{
+  
     font-size: 20px;
     color: white;
     font-weight: 500;
@@ -224,7 +258,7 @@ span{
 
 .about-img img{
     position: relative;
-    width: 500px;
+    width: 400px;
     box-shadow: 0 0 25px rgba(52, 248, 245, 0.8),
                 0 0 50px rgba(52, 248, 245, 0.8);
     border-radius: 50%;

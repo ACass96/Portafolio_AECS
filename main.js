@@ -7,7 +7,7 @@ let totalHeight = document.body.scrollHeight - window.innerHeight;
 }
 
 // Botones cards
-const btn = document.getElementsByClassName("btn");
+const btn = document.getElementsByClassName("btn")
 btn.forEach(btn => {
     btn.addEventListener('click', function(e){
         let x = e.clientX - e.target.offsetLeft;
