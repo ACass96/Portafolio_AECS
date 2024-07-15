@@ -6,7 +6,7 @@ let totalHeight = document.body.scrollHeight - window.innerHeight;
     progress.style.height = progressHeight + "%";
 }
 
-// Botones cards
+// Botones cards ---hay que arreglar
 const btn = document.getElementsByClassName("btn")
 btn.forEach(btn => {
     btn.addEventListener('click', function(e){
@@ -24,3 +24,12 @@ btn.forEach(btn => {
     });
 
 })
+
+//Validación formulario
+//Variables Regex
+const Valnombre = /^[a-zA-Z\s]{3,}$/; //nombre
+const Valemail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/; //email
+const Valnum = /^((?!000)\d{3})[-\s]?\d{3}[-\s]?\d{4}$/ ; //telefono
+
+//validar el formulario
+//agregar una alerta al mandar el formulario
