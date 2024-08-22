@@ -250,12 +250,12 @@ span{
     filter: blur(30px);
 
 }
-/* Sección acerca de mi */
+/* Sección skills */
 .about{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    padding: 12% 2%; 
+    padding: 5% 2%; 
     gap: 10em;
     background-color: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
@@ -274,16 +274,44 @@ span{
     font-size: 42px;
 }
 
-.about-content h3{
-    color: white;
-    font-size: 65px;
+.iconos{
+    justify-content: center;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: row;
+    height: 180px;
+    width: auto;
+    gap: 10rem;
+    margin: 30px;
+    padding: auto;
 }
 
-.about-content p{
+.iconos :hover{
+    transform: scale(1.2);
+}
+.soft{
     color: white;
+    gap: 2rem;
+    letter-spacing: 1px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    padding: 10px 15px;
+
+}
+.btn-3{
+    padding: 15px 28px;
+    background-color: rgba(52, 248, 245, 0.8);
+    color: white;
+    border: 2px solid black;
+    border-radius: 8px;
     font-size: 20px;
-    margin: 2em 0 3em;
-    text-align: justify;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.btn-3:hover{
+    background-color: white;
+    color: rgba(52, 248, 245, 0.8);
 }
 
 /* Seccion cards */
