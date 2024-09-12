@@ -6,9 +6,17 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./estrella.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/css-logo.css"> -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('eh1_3zPaopBWAGags')
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>Andrea Castellanos</title>
 </head>
 <body>
+    
     <div id="progressbar" class="bar"></div>
     <div id="scrollPath" class="scroll"></div>
     <header class="header" id="header2">
@@ -22,32 +30,36 @@
             <a href="#education">Educación</a>
         </nav>
         
-        <a href="#contactame" class="contact">Contáctame</a>
+        <a href="#contactame" class="contact" >Contáctame</a>
         <button class="btn">Menú</button>
     </header>
+   
+   
     <!-- ENCABEZADO/SALUDO -->
     <section class="home"> 
         <div class="home-content">
-            <h3>¡Hola!</h3>
-            <h1>Soy <span>Andrea Castellanos,<br></span>Desarrolladora JAVA Fullstack Jr.</h1>
-
+            <h3>¡Hola! Soy Andea Castellanos</h3><h1>Soy <span class="multiple-text" ></span><br>
             <p>Desarrolladora Java Full-stack Jr. con experiencia en el diseño de frontend y backend lo que me permite crear soluciones integrales y centradas en el usuario. Soy una profesional autodidacta que siempre está en continuo aprendizaje. 
                 Mi pasión por el diseño y la innovación me impulsa a mantenerme siempre actualizada en un entorno en constante evolución.</p>
         <div class="btn-box">
-            <button class="btn-1">Contáctame</a>
-            <a href="#experiencia"><button class="btn-2">Experiencia</a>
+            <a href="/src/CV/CV Andrea Castellanos S.pdf" download="CV_AndreaC.pdf"><button class="btn-1">CV-Español</button></a>
+           <!-- <button class="btn-3">CV-ESP -->
         </div>
         </div>
         <div class="imghome">
             <img src="./src/zacatlan-perfil.jpg" alt="imagen perfil" class="img-box">
         </div> 
     </section>
-    <!-- SKILLS -->
-    <section class="about" id="about">
+  
+  
+    <!-- -------------------------------------------------------------SKILLS -->
+     <div>
         <div id="stars"></div>
-        
         <div id="stars2"></div>
-        
+        <div id="stars3"></div>
+     </div>
+
+    <section class="about" id="about">
         <div class="about-content" id="me">
             <h2 class="heading">Habilidades <span>técnicas</span></h2>
             <br>
@@ -70,53 +82,51 @@
             </div>
             <br>
             <h2 class="heading">Habilidades <span>blandas</span></h2>
-            <div class="soft">
-                <ul class="lista">
-                    <li><h1>Liderazgo</h1></li>
-                    <li><h1>Trabajo en equipo</h1></li>
-                    <li><h1>Trabajo en equipo</h1></li>
-                    <li><h1>Trabajo en equipo</h1></li>
-                </ul>
+            <div class="skills-2">
+                <div class="btn-3">Liderazgo</div>
+                <div class="btn-3">Trabajo en equipo</div>
+                <div class="btn-3">Autodidacta</div>
+                <div class="btn-3">Proactividad</div>
+                <div class="btn-3">Orientación al detalle</div>
+                <div class="btn-3">Comunicación acertiva</div>
             </div>
-            <a href="#experiencia" class="btn-3">Experiencia</a>
-        </div>
+    </div>
         
-        <div id="stars3"></div>
+        
     </section>
-    <!-- CARDS -->
+    <!-- ---------------------------------------------------------------CARDS -->
     <section id="experiencia">
         <br>
     <h2 class="heading">Experiencia<span> Profesional</span></h2> 
      <div class="tarjetas">
         <div class="borde">
-        <div class="card">
+        <div class="card"> <!--Rcik and Morty> -->
             <img src="./src/rickmorty app.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
                 <br>
               <h3 class="card-title">Rick & Morty<span> REACT App</span></h3>
-              <p class="card-text">Buscador de fichas de personajes. Pequeño proyecto realizado con React donde los datos e imganes se tomaron de una api.</p>
+              <p class="card-text">Buscador de fichas de personajes. Pequeño proyecto realizado con React donde los datos e imganes se tomaron de una api gratuita.</p>
             </p>
             <br>
             </div>
-            <a href="https://rick-morty-reapp.netlify.app/" class="btn">Ver más</a>
+            <a href="https://rick-morty-reapp.netlify.app/" target="_blank" class="btn">Ver más</a>
             </div>
         </div>
         <div class="borde">
-            <div class="card">
+            <div class="card"> <!--Saihon -->
                 <img src="./src/Saihon.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <br>
-                  <h3 class="card-title">Sai<span>hon</span></h3>
-                  <p class="card-text">E-commerce enfocado en la venta de libros. Desarrollada con diversas herramientas digitales como HTML, CSS, Figma, entre otros. Me desempeñé en la elaboración de formularios y diseño de frontend.</p>
-                </p>
+                  <h3 class="card-title">Sai<span>hon</span> E-commerce</h3>
+                  <p class="card-text">E-commerce enfocado en la venta de libros. Desarrollada con diversas herramientas digitales como HTML, CSS, Figma, entre otros. Me desempeñé en la elaboración de formularios y diseño de frontend.</p></p>
                 <br>
                 </div>
-                <a href="https://github.com/sam-alen/saihon" class="btn">Ver más</a>
+                <a href="https://github.com/sam-alen/saihon" target="_blank" class="btn">Ver más</a>
                 </div>
             </div>
 
         <div class="borde">
-          <div class="card">
+          <div class="card"> <!--CineMix -->
             <img src="./src/CineMix.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <br>
@@ -125,37 +135,122 @@
             </p>
             <br>
             </div>
-            <a href="https://github.com/ACass96/CineMix-Generation-CH41" class="btn">Ver más</a>
-          </div></div>
+            <a href="https://github.com/ACass96/CineMix-Generation-CH41" target="_blank" class="btn">Ver más</a>
+          </div>
+        </div>
+    </div>
+    <div class="tarjetas">
+        <div class="borde">
+        <div class="card"> <!--BOT DE TELEGRAM -->
+            <img src="/src/Gato-Bot.png" class="card-img-top" alt="JAVA BOT" style="height: 60%;">
+            <div class="card-body">
+                <br>
+              <h3 class="card-title">Gato Hacker<span> Telegram Bot</span></h3>
+              <p class="card-text">Peqeño chatbot en Telegram desarrollado en el lenguaje de JAVA. Desarrollado a través del reto de CODEGym</p>
+            <br>
+            </div>
+            <a href="" target="_blank" class="btn">Ver más</a>
+            </div>
+        </div>
+        <div class="borde">
+            <div class="card"> <!--PORTAFOLIO PERSONAL -->
+                <img src="/src/portafolio-web.png" class="card-img-top" alt="Portafolio personal" style="height: 50%;">
+                <div class="card-body">
+                    <br>
+                  <h3 class="card-title">Portafolio <span>Personal</span> </h3>
+                  <p class="card-text">Portafolio web personal donde presento mis más recientes proyectos y mis habilidades como desarrolladora de front end.</p>
+                <br>
+                </div>
+                <a href="" target="_blank" class="btn">Ver más</a>
+                </div>
+            </div>
+
+        <div class="borde">
+          <div class="card"> <!--En prorgeso-->
+            <img src="/src/refugio-mascotas.jpg" class="card-img-top" alt="Mascotas E-commerce">
+            <div class="card-body">
+                <br>
+              <h3 class="card-title">Refugio de <span>Mascotas</span></h3>
+              <p class="card-text">Proyecto en proceso...</p>
+            </p>
+            <br>
+            </div>
+            <a href="#" target="_blank" class="btn">Ver más</a>
+          </div>
+        </div>
     </div>
      </section>
+   
+   
      <!-- Educación -->
-    <section class="form" id="education">
+    <section class="form-1" id="education">
+        <br>
         <h2 class="contactame">Educa<span>ción</span></h2>
+        <div class="timeline">
+            <div class="checkpoint">
+                <div>
+                    <h2>Maestría en Análisis de Datos</h2>
+                    <h3>UNIR, Abril 2024 - Actualidad</h3>
+                    <p >Maestría enfocada en el aprendizaje de técnicas de análisis para datos masivos</p>
+                </div>
+            </div>
+            <div class="checkpoint">
+                <div>
+                    <h2>Java FullStack Developer</h2>
+                    <h3>Generation México, Abril 2024 - Julio 2024</h3>
+                    <p >Bootcamp intensivo de +500 hrs. enfocado en el desarrollo de habilidades técnicas como HTML, CSS, JS, JAVA, etc y habilidades blandas</p>
+                </div>
+            </div>
+            <div class="checkpoint">
+                <div>
+                    <h2>Ing Bionica</h2>
+                    <h3>UPAEP, Agisto 2016 - Noviembre 2022</h3>
+                    <p >Carrera multidisciplinaria que combina la electrónica, biología, física, mecánica y robótica para crear sistemas artificiales.</p>
+                </div>
+            </div>
+            <div class="checkpoint">
+                <div>
+                    <h2>Diplomado en diseño de implantes y prótesis externas </h2>
+                    <h3>UPAEP, Septiembre 2019 - Marzo 2020</h3>
+                    <p >Diplomado de +400hrs enfocado al diseño de implantes prótesiscos y prótesis externas a través de diferentes técnicas y herramientas</p>
+                </div>
+            </div>
+        </div> <!--timeline-->
     </section>
+    
+    
     <!-- FORMULARIO CONTACTO -->
      <section class="form" id="contactame">
+        <br>
         <h2 class="contactame">Ponte en <span>contácto</span></h2>
         <form action="#">
             <div class="input-box">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="👤 Nombre Completo">
+                <input type="name" name="from_name" class="form-control" id="exampleInputName" placeholder="👤 Nombre Completo">
+                <span id="errorNombre" style="color: red;"></span>
             </div>
             <div class="input-box">
                 
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="✉️ Email">
+                <input type="email" name="email_id" class="form-control" id="exampleInputEmail" placeholder="✉️ Email">
+                <span id="errorEmail" style="color: red;"></span>
             </div>
             <div class="input-box">
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="📞 Número de teléfono">
+                <input type="tel" name="phone" class="form-control" id="exampleInputPhone" placeholder="📞 Número de teléfono">
+                <span id="errorTelefono" style="color: red;"></span>
             </div>
             
             <div class="input-box">
-                <textarea class="form-control" id="exampleFormControlInput1" rows="3" placeholder="✏️ Escribe tu mensaje  aquí"></textarea>
+                <textarea class="form-control" name="message" id="exampleInputMessage" rows="3" placeholder="✏️ Escribe tu mensaje  aquí"></textarea>
+                <span id="errorMensaje" style="color: red;"></span>
             </div>
+            <br>
             <div>
-                <button class="btn-1">Enviar</button>
+                <button type="submit" class="btn-1" id="btnEnviar">Enviar</button>
             </div>
         </form>
      </section>
+     
+     
+     <!-- FOOTER -->
      <footer class="footer">
         <div class="redes">
             <a href="https://www.facebook.com/andy.e.miller.3/"><i class="fa-brands fa-facebook"></i></a> 
@@ -164,30 +259,15 @@
             <a href="https://github.com/ACass96"><i class="fa-brands fa-github"></i></i></a>
         </div>
 
-        <ul class="list">
-            <li>
-                <a href="#">FAQ</a>
-            </li>
-            <li>
-                <a href="#">Servicios</a>
-            </li>
-            <li>
-                <a href="#">Sobre mi</a>
-            </li>
-            <li>
-                <a href="#">Contacto</a>
-            </li>
-            <li>
-                <a href="#">Redes</a>
-            </li>
-        </ul>
-        <p class="copyright">© 204 Andy Miller | Todos los derechos reservados</p>
+        <p class="copyright">© 2024 Andy Miller | Todos los derechos reservados</p>
      </footer>
 </body>
+<script src="./main.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="./main.js"></script>
-<script type="text/javascript">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 </script>
 </html>

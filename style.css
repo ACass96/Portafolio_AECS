@@ -40,7 +40,7 @@
         display: none;
     }
 }
-/* Sección de presentación */
+/* ------------------------------------------------------------Sección de presentación */
 .header{
     position: fixed;
     opacity: 90%;
@@ -137,23 +137,37 @@ span{
     box-shadow: 0 0 25px rgba(52, 248, 245, 0.8),
                 0 0 50px rgba(52, 248, 245, 0.8);
     border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
 }
+
+@keyframes float { /*Efecto flotante de la imagen de portada*/
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
 .btn-box{
-    width: 345px;
+    width: 400px;
     display: flex;
     gap: 2em;
 }
 .btn-1{
     padding: 15px 28px;
     background-color: black;
-    color: white;
+    color: rgb(255, 255, 255);
     border: 2px solid transparent;
     border-radius: 8px;
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 600;
     transition: 0.3s ease;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .btn-1:hover{
@@ -163,8 +177,8 @@ span{
 }
 
 .btn-2{
-    padding: 15px 28px;
-    background-color: rgba(52, 248, 245, 0.8);
+    padding: 15px 40px;
+    background-color: rgba(29, 225, 222, 0.8);
     color: white;
     border: 2px solid black;
     border-radius: 8px;
@@ -250,40 +264,32 @@ span{
     filter: blur(30px);
 
 }
-/* Sección skills */
+/* ---------------------------------------------------------------Sección skills */
 .about{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
+    margin-top: 0;
     padding: 5% 2%; 
     gap: 10em;
     background-color: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-.about-img img{
-    position: relative;
-    width: 400px;
-    box-shadow: 0 0 25px rgba(52, 248, 245, 0.8),
-                0 0 50px rgba(52, 248, 245, 0.8);
-    border-radius: 50%;
-}
-
 .about-content h2{
-    text-align: left;
+    text-align: center;
     color: white;
     font-size: 42px;
 }
 
 .iconos{
     justify-content: center;
-    /* align-items: center; */
     display: flex;
     flex-direction: row;
-    height: 180px;
+    height: 170px;
     width: auto;
     gap: 10rem;
     margin: 30px;
-    padding: auto;
+    /* padding: auto; */
 }
 
 .iconos :hover{
@@ -314,7 +320,21 @@ span{
     color: rgba(52, 248, 245, 0.8);
 }
 
-/* Seccion cards */
+.skills-2{
+    width: auto;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+    
+}
+
+
+/* --------------------------------------------------------- Seccion cards */
+
 .tarjetas{
     display: flex;
     flex-direction: row;
@@ -364,18 +384,19 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
 .card img{
     object-fit: contain;
-    height: 55%;
+    height: 57%;
     width: auto;
 }
 .borde{
     background: linear-gradient(to right, red, purple);
     padding: .3rem;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 .card p{
     font-size: 1.2rem;
     text-align: justify;
     padding: .5rem;
+    /* margin: .2rem; */
     color: rgb(0, 0, 0);
 
 }
@@ -395,7 +416,6 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3em;
-    
 }
  
 .btn{
@@ -415,34 +435,118 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     
 }
 
-.btn span{
+
+/* -----------------------------------------------------------------EDUCACIÓN */
+/* .timeline{ 
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    margin: 5rem;
+}*/
+.form-1 h2{
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 40px;
+}
+.timeline::before{
+    content: '';
     position: absolute;
-    background: #fff;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    border-radius: 50%;
-    animation: animate 1s linear infinite;
-    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: fixed;
 }
 
-@keyframes animate{
-    0%
-    {
-        width: 0px;
-        height: 0px;
-        opacity: 0.5;
+.timeline h2{
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+ .timeline p{
+    color: black;
+    margin-bottom: 1rem;
+ }
+
+.timeline{
+    margin: 2em auto;
+    max-width: 34.15em;
+}
+
+.checkpoint{
+    max-width: auto;
+    padding-top: .8rem;
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+.checkpoint div{
+    background-color: black;
+    opacity: 90%;
+    color: white;
+    /* background-image: linear-gradient(135deg, rgb(26, 224, 221), #755bea,#ff72c0); */
+    /* #fcb045, #fd1d1d, #833ab4, rgb(17, 190, 173), rgb(23, 143, 212)); */
+    background-size: 500%;
+    animation: fanimado 30s infinite;
+    border: 2px solid black;
+    border-radius: 1.2rem;
+    padding: .8rem;
+    margin-top: 1rem;
+    padding-top: 0;
+    width: 31.5rem;
+    height:auto;
+    justify-content: center;
+    align-content: center;
+}
+
+@keyframes fanimado {
+    0% {
+        background-image: 0% 50%;
     }
 
-    100%
-    {
-        width: 500px;
-        height: 500px;
-        opacity: 0;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
+.checkpoint p {
+    line-height: 27px;
+    color: white;
+}
 
-/* Sección de formulario */
+.checkpoint:nth-child(odd){
+    /* border-left: 6px solid rgb(202, 19, 162); */
+    padding-left: 3rem;
+    transform: translateX(17rem);
+}
+
+.checkpoint:nth-child(even){
+    border-right: 6px solid rgb(202, 19, 162);
+    padding-right: 3rem;
+    transform: translateX(-17em);
+}
+
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before{
+    content: '';
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkpoint:nth-child(odd)::before{
+    left: 0;
+}
+
+/* ----------------------------------------------------------Sección de formulario */
 .form h2{
     text-align: center;
     margin-top: 3em;
@@ -475,7 +579,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     resize: none;
 }
 
-/* Sección de footer */
+/* ------------------------------------------------------------Sección de footer */
 .footer{
     position: relative;
     bottom: 0;
@@ -509,26 +613,6 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform:  scale(1.2) translateY(-10px);
     color:   #833ab4;
     border: 2px solid   #833ab4;
-}
-
-.footer ul{
-    margin-top: 0;
-    padding: 0;
-    font-size:  18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.footer ul li a{
-    color: white;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease;
-}
-
-.footer ul li{
-    display:  inline-block;
-    padding:  0 15px;
 }
 
 .footer .copyright{
