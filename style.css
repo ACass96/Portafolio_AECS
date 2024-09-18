@@ -8,9 +8,19 @@
     list-style: none;
 }
 
-@media(max-width:576px){ /*Acomodo para cel*/
+@media(max-width:425px){ /*Acomodo para cel*/
+    /* ----- navbar */
+    .header{
+        display: flex;
+        width: 100%;
+       position: fixed;
+       justify-content: center;
+    }
     .header .btn{
         display: block;
+    }
+    .header .contact{
+        display: none;
     }
     .navbar{
         position: absolute;
@@ -23,22 +33,142 @@
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
-        
     }
+
+    /* ---Encabezado */
+    .home{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+    }
+    .home img{
+        margin-top: 5rem;
+        margin-left: 1rem;
+        align-items: center;
+        width: 95%;
+    }
+    .home-content p{
+        display: flex;
+    }
+    /* ----------SKILLS */
+
+    .container{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .iconos {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*Dos columnas */
+        gap: 10px;
+      }
+    .iconos img{
+        width: 40px;
+        height: auto;
+    }
+    .iconos :hover{
+        transform: scale(1.2);
+    }
+    .skills-2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .heading{
+        padding: 1rem;
+    }
+    
 }
 
-@media(min-width:768px){  /*Acomodo para tablet*/
-     .header .btn{
+@media(max-width:768px){  /*Acomodo para tablet*/
+    /* ---Nabvar */
+    .header .btn{
+        display: block;
+    }
+    .navbar{
+        position: fixed;
         display: none;
     }
-   
+    .navbar .active{
+        display: none;    
+    }
+    
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
 
+    /* ---Encabezado */
+    .home{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        /* justify-content: center; */
+        align-items: center;
+        gap: .3rem;
+    }
+    .home img{
+        margin-top: 5rem;
+        margin-left: 3rem;
+        align-items: center;
+        /* justify-content: center; */
+        width: 80%;
+    }
+    /* ----------SKILLS */
+    .container{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .iconos {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-left: 5rem;
+      }
+    .iconos img{
+        width: 80px;
+        height: auto;
+    }
+    .iconos :hover{
+        transform: scale(1.2);
+    }
+    .skills-2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
 }
 
-@media(min-width:900px){ /*Acomodo para pantalla grande*/
+@media(min-width:769px){ /*Acomodo para pantalla grande*/
+    /* ---Nabvar*/
     .header .btn{
         display: none;
     }
+   
+    /* ---Encabezado */
+    .home{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .home img{
+        margin-top: 4rem;
+        margin-left: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+    /* ------------skills */
+    .about{
+        display: flex;
+    }
+
 }
 /* ------------------------------------------------------------Sección de presentación */
 .header{
@@ -264,14 +394,14 @@ span{
     filter: blur(30px);
 
 }
-/* ---------------------------------------------------------------Sección skills */
+/* ---------------------------------------------------Sección skills */
 .about{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-top: 0;
     padding: 5% 2%; 
-    gap: 10em;
+    gap: 10rem;
     background-color: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
@@ -281,7 +411,7 @@ span{
     font-size: 42px;
 }
 
-.iconos{
+/*.iconos{
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -289,8 +419,8 @@ span{
     width: auto;
     gap: 10rem;
     margin: 30px;
-    /* padding: auto; */
-}
+    /* padding: auto;  */
+
 
 .iconos :hover{
     transform: scale(1.2);
@@ -320,18 +450,21 @@ span{
     color: rgba(52, 248, 245, 0.8);
 }
 
-.skills-2{
-    width: auto;
-    height: 4.5rem;
+.iconos {
     display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    margin-left: 3rem;
-    
-}
-
+    flex-wrap: wrap;
+    gap: 10rem;
+  }
+  
+  .iconos img {
+    width: 160px; /* Ajusta según tu preferencia */
+  }
+  
+  .skills-2 {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 12px;
+  }
 
 /* --------------------------------------------------------- Seccion cards */
 
@@ -342,22 +475,8 @@ span{
     margin-top: 80px;
     padding: 15px;
     gap: 1.2rem;
-   
 }
-.card{ /*Fondo de las tarjetas grandes*/
-    /* background-color: #ff6f01; */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /*Sombra de las tarjetas*/
-    transition: transform 0.5s;
 
-}
-.card {/*Sombra de las tarjetas al pasar el cursor*/
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.card-body h5 , p{ /*Color texto de las tarjetas grandes*/
-    /* color: rgb(0, 0, 0); */
-   
-    color: white;
-}
 .card{
     display: flex;
     flex-direction: column;
@@ -391,6 +510,8 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to right, red, purple);
     padding: .3rem;
     border-radius: 12px;
+    width: auto;
+    height: auto;
 }
 .card p{
     font-size: 1.2rem;
@@ -422,7 +543,7 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     justify-content: center;
     font-size: 18px;
-    padding: 10px 20px; */
+    padding: 10px 20px; 
     /* margin: 5px 0; */
     text-decoration: none;
     text-transform: uppercase;
@@ -444,6 +565,10 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     align-items: center;
     margin: 5rem;
 }*/
+.form-1{
+    display: flex;
+    flex-direction: column;
+}
 .form-1 h2{
     text-align: center;
     margin-top: 3em;
