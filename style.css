@@ -6,6 +6,8 @@
     font-family:sans-serif;
     text-decoration: none;
     list-style: none;
+    /* width: 100%; */
+    /* overflow-x: hidden; */
 }
 
 @media(max-width:425px){ /*Acomodo para cel*/
@@ -59,14 +61,18 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-right: 2.5rem;
+        padding: 0;
     }
     .iconos {
         display: grid;
         grid-template-columns: 1fr 1fr; /*Dos columnas */
-        gap: 10px;
+        gap: 8px;
+      
       }
     .iconos img{
-        width: 40px;
+        width: 100%;
+        max-width: 100px;
         height: auto;
     }
     .iconos :hover{
@@ -79,9 +85,55 @@
         gap: 1rem;
     }
     .heading{
-        padding: 1rem;
+        padding: 1.1rem;
+        box-sizing: border-box;
+    }
+    /* -------CARDS */
+    .tarjetas {
+        flex-direction: column; /* Hacer que las tarjetas se apilen verticalmente */
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        width: 100%; /* Ajustar la tarjeta para que ocupe el 100% del ancho de la pantalla */
+        max-width: 350px;
+        height: auto; /* Dejar que la altura se ajuste automáticamente */
+        /* padding: 8px; Añadir algo de espacio interno para una mejor visualización */
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
     
+    .card img {
+        height: auto; /* Ajustar la imagen para que no desborde */
+        width: 100%; /* Hacer que la imagen ocupe el 100% del ancho de la tarjeta */
+        max-width: 300px;
+        /*object-fit: cover; Asegurar que la imagen se recorte si es necesario para llenar el espacio*/
+    }
+
+    .card p {
+        /* font-size: 1rem; Reducir el tamaño del texto */
+        display: none;
+    }
+
+    .card h3 {
+        font-size: 1.2rem; /* Ajustar el tamaño del título */
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading h2 {
+        font-size: 1.8rem; /* Reducir el tamaño del encabezado en pantallas pequeñas */
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
 }
 
 @media(max-width:768px){  /*Acomodo para tablet*/
@@ -144,6 +196,9 @@
         justify-content: center;
         gap: 1rem;
     }
+
+    /* -------CARDS */
+
 }
 
 @media(min-width:769px){ /*Acomodo para pantalla grande*/
@@ -154,22 +209,50 @@
    
     /* ---Encabezado */
     .home{
+        width: 100%;
         display: flex;
         flex-direction: row;
+        /* flex-wrap: wrap-reverse; */
+        justify-content: center;
     }
     
     .home img{
         margin-top: 4rem;
-        margin-left: 2rem;
+        margin-right: 2rem;
         align-items: center;
         justify-content: center;
     }
+   
+
     /* ------------skills */
-    .about{
-        display: flex;
+    .about {
+        width: 100%;
+        flex-direction: row; /* Cambia la dirección a fila para pantallas grandes */
+        justify-content: center;
+        gap: 5rem; /* Ajusta el espaciado */
     }
 
+    .iconos {
+        justify-content: center;
+        gap: 5rem; /* Menos espacio entre los iconos en pantallas grandes */
+    }
+
+    .iconos img {
+        width: 120px; /* Iconos más pequeños para pantallas grandes */
+    }
+
+    .skills-2 {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 36px; /* Un tamaño de fuente más pequeño para pantallas más grandes */
+    }
+
+    /* -------CARDS */
 }
+
 /* ------------------------------------------------------------Sección de presentación */
 .header{
     position: fixed;
@@ -411,20 +494,27 @@ span{
     font-size: 42px;
 }
 
-/*.iconos{
-    justify-content: center;
+.iconos {
     display: flex;
-    flex-direction: row;
-    height: 170px;
-    width: auto;
+    flex-wrap: wrap;
     gap: 10rem;
-    margin: 30px;
-    /* padding: auto;  */
-
+}
+  
+.iconos img {
+    width: 180px; /* Ajusta según tu preferencia */
+    height: auto;
+}
 
 .iconos :hover{
     transform: scale(1.2);
 }
+
+.skills-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .soft{
     color: white;
     gap: 2rem;
@@ -450,60 +540,35 @@ span{
     color: rgba(52, 248, 245, 0.8);
 }
 
-.iconos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10rem;
-  }
-  
-  .iconos img {
-    width: 160px; /* Ajusta según tu preferencia */
-  }
-  
-  .skills-2 {
-    display: flex;
-    /* flex-wrap: wrap; */
-    gap: 12px;
-  }
-
 /* --------------------------------------------------------- Seccion cards */
 
 .tarjetas{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 80px;
     padding: 15px;
-    gap: 1.2rem;
+    margin: 2px;
+    gap: 1rem;
 }
 
 .card{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0%;
-    /* margin-top: 2rem; */
-    /* margin-right: 20px; */
     max-width: auto;
-  
-    
-}
-
-.card{
-    
-    box-sizing: border-box;
-    height: auto;
     background-color: rgb(255, 255, 255); /*PENDIENTE*/
     border-radius: 8px;
-    width: 600px;
-    height: 600px;
-    justify-content: center;
+    width: 450px;
+    height: 550px;
 }
 
 .card img{
     object-fit: contain;
-    height: 57%;
+    height: 55%;
     width: auto;
 }
 .borde{
