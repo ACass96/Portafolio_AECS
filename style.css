@@ -6,6 +6,8 @@
     font-family:sans-serif;
     text-decoration: none;
     list-style: none;
+    /* width: 100%; */
+    /* overflow-x: hidden; */
 }
 
 @media(max-width:425px){ /*Acomodo para cel*/
@@ -19,12 +21,10 @@
     .header .btn{
         display: block;
     }
-    .header .contact{
-        display: none;
-    }
     .navbar{
         position: absolute;
         display: none;
+        max-width: 425px;
     }
     .navbar .active{
         display: block;    
@@ -34,7 +34,13 @@
         font-size: 2rem;
         margin: 3rem 0;
     }
-
+    .ham:checked ~ .ul_links .contact {
+        display: block; /* También mostrar el botón "Contáctame" en el menú */
+    }
+    .contact{
+        display: none;
+    }
+   
     /* ---Encabezado */
     .home{
         width: 100%;
@@ -59,14 +65,18 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-right: 2.5rem;
+        padding: 0;
     }
     .iconos {
         display: grid;
         grid-template-columns: 1fr 1fr; /*Dos columnas */
-        gap: 10px;
+        gap: 8px;
+      
       }
     .iconos img{
-        width: 40px;
+        width: 100%;
+        max-width: 100px;
         height: auto;
     }
     .iconos :hover{
@@ -79,15 +89,95 @@
         gap: 1rem;
     }
     .heading{
-        padding: 1rem;
+        padding: 1.1rem;
+        box-sizing: border-box;
+    }
+    /* -------CARDS */
+    .tarjetas {
+        flex-direction: column; /* Hacer que las tarjetas se apilen verticalmente */
+        align-items: center;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        width: 100%; /* Ajustar la tarjeta para que ocupe el 100% del ancho de la pantalla */
+        max-width: 350px;
+        height: auto; /* Dejar que la altura se ajuste automáticamente */
+        /* padding: 8px; Añadir algo de espacio interno para una mejor visualización */
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
     }
     
+    .card img {
+        height: auto; /* Ajustar la imagen para que no desborde */
+        width: 100%; /* Hacer que la imagen ocupe el 100% del ancho de la tarjeta */
+        max-width: 300px;
+        /*object-fit: cover; Asegurar que la imagen se recorte si es necesario para llenar el espacio*/
+    }
+
+    .card p {
+        /* font-size: 1rem; Reducir el tamaño del texto */
+        display: none;
+    }
+
+    .card h3 {
+        font-size: 1.2rem; /* Ajustar el tamaño del título */
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading h2 {
+        font-size: 1.8rem; /* Reducir el tamaño del encabezado en pantallas pequeñas */
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    /* -------EDUCACION */
+    .form-1{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .timeline{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .checkpoint{
+        /* display: flex; */
+        align-content: center;
+        justify-content: center;
+        max-width: 350px;
+        width: 75%;
+        height: auto;
+        padding-top: .5rem;
+        padding-bottom: 1rem;
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* -------cuestionario */
+    .form form{
+        max-width: 320px;
+    }
+ 
 }
+
 
 @media(max-width:768px){  /*Acomodo para tablet*/
     /* ---Nabvar */
-    .header .btn{
-        display: block;
+    .ham:checked ~ .ul_links .contact {
+        display: block; /* También mostrar el botón "Contáctame" en el menú */
     }
     .navbar{
         position: fixed;
@@ -101,6 +191,9 @@
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+    }
+    .contact{
+        display: none;
     }
 
     /* ---Encabezado */
@@ -144,34 +237,143 @@
         justify-content: center;
         gap: 1rem;
     }
+
+    /* -------CARDS */
+    .card{
+        box-sizing: border-box;
+    }
+    .card p{
+        font-size: 1rem;
+        text-align: justify;
+        padding: 0;
+    }
+    .btn{
+       padding: 5px 10px; 
+    }
+    /* -------EDUCACION */
+    .form-1{
+        display: flex;
+        align-items: center;
+    }
+    .checkpoint{
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        padding-top: .5rem;
+        padding-bottom: 1rem;
+        position: relative;
+    }
+
+    /* ---cuestionario */
+    .form form{
+        width: 550px; 
+        margin: 0;
+        padding: 0;
+     }
+    
 }
 
 @media(min-width:769px){ /*Acomodo para pantalla grande*/
     /* ---Nabvar*/
-    .header .btn{
-        display: none;
+
+    .hamburguesa, .ul_links {
+        display: none; /* Ocultar el menú desplegable y el ícono de hamburguesa */
     }
    
     /* ---Encabezado */
     .home{
+        width: 100%;
         display: flex;
         flex-direction: row;
+        /* flex-wrap: wrap-reverse; */
+        justify-content: center;
     }
     
     .home img{
         margin-top: 4rem;
-        margin-left: 2rem;
+        margin-right: 2rem;
         align-items: center;
         justify-content: center;
     }
+   .hamburguesa{
+    display: none;
+   }
+
     /* ------------skills */
-    .about{
-        display: flex;
+    .about {
+        width: 100%;
+        flex-direction: row; /* Cambia la dirección a fila para pantallas grandes */
+        justify-content: center;
+        gap: 5rem; /* Ajusta el espaciado */
     }
 
+    .iconos {
+        justify-content: center;
+        gap: 1rem; 
+    }
+
+    .iconos img {
+        width: 100px; /* Iconos más pequeños para pantallas grandes */
+    }
+
+    .skills-2 {
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .about-content h2 {
+        font-size: 36px; /* Un tamaño de fuente más pequeño para pantallas más grandes */
+    }
+
+    /* -------CARDS */
+
+    /* -------EDUCACION */
+    .checkpoint{
+        display: flex;
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+    }
+    .checkpoint:nth-child(odd){ /* Espacios y lineas rosas*/
+        /* border-left: 6px solid rgb(202, 19, 162); */
+        padding-left: 3rem;
+        transform: translateX(17rem);
+    }
+    
+    .checkpoint:nth-child(even){
+        border-right: 6px solid rgb(202, 19, 162);
+        padding-right: 3rem;
+        transform: translateX(-17em);
+    }
+    
+    .checkpoint:nth-child(odd)::before,
+    .checkpoint:nth-child(even)::before{
+        content: '';
+        width: 3em;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .checkpoint:nth-child(odd)::before{
+        left: 0;
+    }
+
+    /* -------cuestionario */
+
+    /* ----formulario */
+    .form form{
+        max-width: 800px;
+    }
 }
+
 /* ------------------------------------------------------------Sección de presentación */
 .header{
+    display: flex;
+    flex-wrap: wrap;
     position: fixed;
     opacity: 90%;
     top: 0;
@@ -202,9 +404,7 @@
 span{
     color: rgb(202, 19, 162);
 }
-
 .navbar a{
-  
     font-size: 20px;
     color: white;
     font-weight: 500;
@@ -218,7 +418,7 @@ span{
     border-bottom: 3px solid rgba(52, 248, 245, 0.8);;
 }
 
-.contact{
+.contact, .contact2{
     padding:  10px 28px;
     background-color: white;
     color: black;
@@ -235,7 +435,97 @@ span{
     box-shadow: 0 0 25px rgb(202, 19, 162);
     color: white;
 }
+/* Estilos del botón de hamburguesa */
+.menu_toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 12px;
+}
 
+.menu_toggle .line{
+    position: relative;
+    width: 60px;
+    height: 5px;
+    background-color: rgb(202, 19, 162);
+    border-radius: 10px;
+}
+
+ol,ul{
+    list-style: none;
+}
+.ham{
+    display: none;
+}
+
+.ul_links{
+    width: 100%;
+    background: linear-gradient(to top, red, purple);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: all .3s;
+}
+.list_icon{
+    color: rgb(202, 19, 162);
+    cursor: pointer;
+}
+.ul_links a{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    
+}
+
+
+.menu_toggle .line:nth-child(1){
+    top: 0;
+    transform: rotate(0);
+    transition: top 0.2 ease, transform 0.4s ease;
+}
+
+.menu_toggle .line:nth-child(2){
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+}
+
+.menu_toggle .line:nth-child(2){
+    top: 0;
+    transform: rotate(0);
+    transition: top 0.2 ease, transform 0.4s ease;
+}
+/* animacion del boton */
+.menu_toggle.active .line:nth-child(1){
+    top: 18px;
+    transform: rotate(45deg);
+}
+.menu_toggle.active .line:nth-child(2){
+    opacity: 0;
+    visibility: hidden;
+}
+.menu_toggle.active .line:nth-child(3){
+    top: -16px;
+    transform: rotate(-45deg);
+}
+.ham:checked + .ul_links{
+    height: calc(100vh - 60px);
+}
+
+/* encabezado */
 .home{
     width: 100%;
     min-height: 100vh;
@@ -322,19 +612,6 @@ span{
     color: rgba(52, 248, 245, 0.8);
 }
 
-/* barra de navegacion 
-::-webkit-scrollbar{
-    width: 15px;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: rgba(52, 248, 245, 0.8);
-}
-
-::-webkit-scrollbar-track{
-    background-color: rgba(0,0,0,0.6);
-    width: 50px;
-}*/
 ::-webkit-scrollbar{
     width: 0;
 }
@@ -411,20 +688,29 @@ span{
     font-size: 42px;
 }
 
-/*.iconos{
-    justify-content: center;
+.iconos {
     display: flex;
-    flex-direction: row;
-    height: 170px;
-    width: auto;
+    flex-wrap: wrap;
     gap: 10rem;
-    margin: 30px;
-    /* padding: auto;  */
-
+}
+  
+.iconos img {
+    width: 160px; /* Ajusta según tu preferencia */
+    height: auto;
+    padding: 1.2rem;
+    margin: auto;
+}
 
 .iconos :hover{
     transform: scale(1.2);
 }
+
+.skills-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .soft{
     color: white;
     gap: 2rem;
@@ -450,60 +736,35 @@ span{
     color: rgba(52, 248, 245, 0.8);
 }
 
-.iconos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10rem;
-  }
-  
-  .iconos img {
-    width: 160px; /* Ajusta según tu preferencia */
-  }
-  
-  .skills-2 {
-    display: flex;
-    /* flex-wrap: wrap; */
-    gap: 12px;
-  }
-
 /* --------------------------------------------------------- Seccion cards */
 
 .tarjetas{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 80px;
     padding: 15px;
-    gap: 1.2rem;
+    margin: 2px;
+    gap: 1rem;
 }
 
 .card{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0%;
-    /* margin-top: 2rem; */
-    /* margin-right: 20px; */
     max-width: auto;
-  
-    
-}
-
-.card{
-    
-    box-sizing: border-box;
-    height: auto;
     background-color: rgb(255, 255, 255); /*PENDIENTE*/
     border-radius: 8px;
-    width: 600px;
-    height: 600px;
-    justify-content: center;
+    width: 450px;
+    height: 550px;
 }
 
 .card img{
     object-fit: contain;
-    height: 57%;
+    height: 55%;
     width: auto;
 }
 .borde{
@@ -557,14 +818,8 @@ span{
 }
 
 
-/* -----------------------------------------------------------------EDUCACIÓN */
-/* .timeline{ 
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    align-items: center;
-    margin: 5rem;
-}*/
+/* ------------------------------------------------------EDUCACIÓN */
+
 .form-1{
     display: flex;
     flex-direction: column;
@@ -575,16 +830,7 @@ span{
     margin-bottom: 1em;
     font-size: 40px;
 }
-.timeline::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: fixed;
-}
+
 
 .timeline h2{
     margin-top: 1rem;
@@ -611,10 +857,8 @@ span{
     background-color: black;
     opacity: 90%;
     color: white;
-    /* background-image: linear-gradient(135deg, rgb(26, 224, 221), #755bea,#ff72c0); */
-    /* #fcb045, #fd1d1d, #833ab4, rgb(17, 190, 173), rgb(23, 143, 212)); */
     background-size: 500%;
-    animation: fanimado 30s infinite;
+    /* animation: fanimado 30s infinite; */
     border: 2px solid black;
     border-radius: 1.2rem;
     padding: .8rem;
@@ -626,52 +870,14 @@ span{
     align-content: center;
 }
 
-@keyframes fanimado {
-    0% {
-        background-image: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .checkpoint p {
     line-height: 27px;
     color: white;
 }
 
-.checkpoint:nth-child(odd){
-    /* border-left: 6px solid rgb(202, 19, 162); */
-    padding-left: 3rem;
-    transform: translateX(17rem);
-}
 
-.checkpoint:nth-child(even){
-    border-right: 6px solid rgb(202, 19, 162);
-    padding-right: 3rem;
-    transform: translateX(-17em);
-}
+/* ------------------------------------------Sección de formulario */
 
-.checkpoint:nth-child(odd)::before,
-.checkpoint:nth-child(even)::before{
-    content: '';
-    width: 3em;
-    height: 3px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.checkpoint:nth-child(odd)::before{
-    left: 0;
-}
-
-/* ----------------------------------------------------------Sección de formulario */
 .form h2{
     text-align: center;
     margin-top: 3em;
@@ -680,7 +886,8 @@ span{
 }
 
 .form form{
-    max-width: 50em;
+   display: flex;
+   flex-direction: column;
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3em;
@@ -697,7 +904,7 @@ span{
     width: 100%;
     padding: 1.5em;
     font-size: 18px;
-    color: black;
+    color: rgb(0, 0, 0);
     background-color: rhb(241,241,241);
     border-radius: .8rem;
     margin: 1rem 0;

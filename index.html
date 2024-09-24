@@ -21,7 +21,6 @@
     <header class="header" id="header2">
         <a href="#" class="logo"><span>Andy</span>Miller</a>
         
-        
         <nav class="navbar">
             <a href="#" class="active">Sobre mí</a>
             <a href="#about" class="active">Skills</a>
@@ -30,7 +29,27 @@
         </nav>
         
         <a href="#contactame" class="contact" >Contáctame</a>
-        <button class="btn">Menú</button>
+      
+        <label class="hamburguesa" for="menu_hamburguesa">
+              <div class="menu_toggle">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            </div>
+        
+        </label>
+         <input  class="ham" type="checkbox" name="" id="menu_hamburguesa">
+
+         <ul class="ul_links">
+            <li class="li_links">
+                <li><a href="#" class="active">Sobre mí</a></li>
+               <li><a href="#about" class="active">Skills</a></li> 
+                <li><a href="#experiencia" class="active">Proyectos</a></li>
+                <li><a href="#education" class="active">Educación</a></li>
+                <li><a href="#contactame" class="contact2" >Contáctame</a></li>
+            </li>
+         </ul>
+       
     </header> 
    
    
@@ -38,10 +57,12 @@
     <section class="home"> 
         <div class="home-content">
             <h3>¡Hola! Soy Andea Castellanos</h3><h1>Soy <span class="multiple-text" ></span><br>
-            <p>Desarrolladora Java Full-stack Jr. con experiencia en el diseño de frontend y backend lo que me permite crear soluciones integrales y centradas en el usuario. Soy una profesional autodidacta que siempre está en continuo aprendizaje. 
-                Mi pasión por el diseño y la innovación me impulsa a mantenerme siempre actualizada en un entorno en constante evolución.</p>
+            <p>Desarrolladora Frontend Jr. apasionada por el aprendizaje constante.
+                Con una sólida experiencia en el diseño y desarrollo del frontend, me especializo en crear soluciones intuitivas y centradas en el usuario. Aunque mi enfoque principal es el frontend, también cuento con experiencia en el backend, lo que me permite tener una visión integral de los proyectos.
+                Mi pasión por el diseño y la innovación me motiva a mantenerme actualizada en un entorno tecnológico en constante evolución</p>
             <div class="btn-box">
-            <a href="/src/CV/CV Andrea Castellanos S.pdf" download="CV_AndreaC.pdf"><button class="btn-1">CV-Español</button></a>
+            <a href="/src/CV/CV Andrea Castellanos S.pdf" download="CV_AndreaC.pdf"><button class="btn-1">CV Español</button></a>
+            <a href="/src/CV/CV Andrea Castellanos S- English.pdf" download="CV_AndreaC.pdf"><button class="btn-2">CV English</button></a>
            <!-- <button class="btn-3">CV-ESP -->
             </div>
         </div>
@@ -95,12 +116,12 @@
 
     </section>
     <!-- ---------------------------------------------------------------CARDS -->
-    <!-- <section id="experiencia">
+    <section id="experiencia">
         <br>
     <h2 class="heading">Experiencia<span> Profesional</span></h2> 
      <div class="tarjetas">
         <div class="borde">
-            <div class="card"> <!--Rcik and Morty --
+            <div class="card"> <!--Rcik and Morty -->
                 <img src="./src/rickmorty app.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <br>
@@ -112,7 +133,7 @@
             </div>
         </div>
         <div class="borde">
-            <div class="card"> <!--Saihon --
+            <div class="card"> <!--Saihon -->
                 <img src="./src/Saihon.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <br>
@@ -125,7 +146,7 @@
         </div>
 
         <div class="borde">
-          <div class="card"> <!--CineMix --
+          <div class="card"> <!--CineMix -->
             <img src="./src/CineMix.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <br>
@@ -136,10 +157,9 @@
             <a href="https://github.com/ACass96/CineMix-Generation-CH41" target="_blank" class="btn">Ver más</a>
           </div>
         </div>
-    </div>
-    <div class="tarjetas">
+   
         <div class="borde">
-        <div class="card"> <!--BOT DE TELEGRAM --
+        <div class="card"> <!--BOT DE TELEGRAM -->
             <img src="/src/Gato-Bot.png" class="card-img-top" alt="JAVA BOT" style="height: 60%;">
             <div class="card-body">
                 <br>
@@ -151,8 +171,8 @@
             </div>
         </div>
         <div class="borde">
-            <div class="card"> <!--PORTAFOLIO PERSONAL --
-                <img src="/src/portafolio-web.png" class="card-img-top" alt="Portafolio personal" style="height: 50%;">
+            <div class="card"> <!--PORTAFOLIO PERSONAL -->
+                <img src="/src/portafolio-web.png" class="card-img-top" alt="Portafolio personal" style="height: 40%;">
                 <div class="card-body">
                     <br>
                   <h3 class="card-title">Portafolio <span>Personal</span> </h3>
@@ -164,7 +184,7 @@
             </div>
 
         <div class="borde">
-          <div class="card"> <!--En prorgeso--
+          <div class="card"> <!--En prorgeso-->
             <img src="/src/refugio-mascotas.jpg" class="card-img-top" alt="Mascotas E-commerce">
             <div class="card-body">
                 <br>
@@ -173,15 +193,15 @@
             </p>
             <br>
             </div>
-            <a href="#" target="_blank" class="btn">Ver más</a>
+            <a href="#" target="_blank" class="btn">Proximamente</a>
           </div>
         </div>
     </div>
      </section>
    
    
-     <!-- Educación --
-    <section class="form-1" id="education">
+      <!-- ------------------Educación  -->
+    <section class="form-1" id="education"> 
         <br>
         <h2 class="contactame">Educa<span>ción</span></h2>
         <div class="timeline">
@@ -213,11 +233,11 @@
                     <p >Diplomado de +400hrs enfocado al diseño de implantes prótesiscos y prótesis externas a través de diferentes técnicas y herramientas</p>
                 </div>
             </div>
-        </div> <!--timeline--
+        </div> <!--timeline
     </section>
     
     
-    <!-- FORMULARIO CONTACTO --
+    <!-- FORMULARIO CONTACTO -->
      <section class="form" id="contactame">
         <br>
         <h2 class="contactame">Ponte en <span>contácto</span></h2>
@@ -248,7 +268,7 @@
      </section>
      
      
-     <!-- FOOTER --
+     <!-- FOOTER -->
      <footer class="footer">
         <div class="redes">
             <a href="https://www.facebook.com/andy.e.miller.3/"><i class="fa-brands fa-facebook"></i></a> 
@@ -258,7 +278,7 @@
         </div>
 
         <p class="copyright">© 2024 Andy Miller | Todos los derechos reservados</p>
-     </footer> -->
+     </footer> 
 </body>
 <script src="./main.js"></script>
 
