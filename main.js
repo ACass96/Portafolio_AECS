@@ -14,7 +14,7 @@ let totalHeight = document.body.scrollHeight - window.innerHeight;
 }
 
 var typed = new Typed(".multiple-text", {
-    strings: ["Frontend Developer Jr.", "Ingeniera Biónica", "Artista amateur", "Dog Lover"],
+    strings: ["Frontend Developer Jr.", "Ingeniera Biónica &#129471;", "Artista amateur &#127912;", "Dog Lover &#128062;", "Gamer &#127918;"],
     typeSpeed: 95,
     backSpeed: 80,
     backDelay: 500,

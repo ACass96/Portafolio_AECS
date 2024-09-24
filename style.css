@@ -21,9 +21,6 @@
     .header .btn{
         display: block;
     }
-    .header .contact{
-        display: none;
-    }
     .navbar{
         position: absolute;
         display: none;
@@ -37,7 +34,12 @@
         font-size: 2rem;
         margin: 3rem 0;
     }
-
+    .ham:checked ~ .ul_links .contact {
+        display: block; /* También mostrar el botón "Contáctame" en el menú */
+    }
+    .contact{
+        display: none;
+    }
    
     /* ---Encabezado */
     .home{
@@ -174,8 +176,8 @@
 
 @media(max-width:768px){  /*Acomodo para tablet*/
     /* ---Nabvar */
-    .header .btn{
-        display: block;
+    .ham:checked ~ .ul_links .contact {
+        display: block; /* También mostrar el botón "Contáctame" en el menú */
     }
     .navbar{
         position: fixed;
@@ -189,6 +191,9 @@
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+    }
+    .contact{
+        display: none;
     }
 
     /* ---Encabezado */
@@ -272,8 +277,9 @@
 
 @media(min-width:769px){ /*Acomodo para pantalla grande*/
     /* ---Nabvar*/
-    .header .btn{
-        display: none;
+
+    .hamburguesa, .ul_links {
+        display: none; /* Ocultar el menú desplegable y el ícono de hamburguesa */
     }
    
     /* ---Encabezado */
@@ -305,11 +311,11 @@
 
     .iconos {
         justify-content: center;
-        gap: 5rem; /* Menos espacio entre los iconos en pantallas grandes */
+        gap: 1rem; 
     }
 
     .iconos img {
-        width: 120px; /* Iconos más pequeños para pantallas grandes */
+        width: 100px; /* Iconos más pequeños para pantallas grandes */
     }
 
     .skills-2 {
@@ -412,7 +418,7 @@ span{
     border-bottom: 3px solid rgba(52, 248, 245, 0.8);;
 }
 
-.contact{
+.contact, .contact2{
     padding:  10px 28px;
     background-color: white;
     color: black;
@@ -438,8 +444,6 @@ span{
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    /* border: 1px solid rgb(217, 217, 217); */
-    /* box-shadow: 0px 10px 20px 0 rgba(0,0,0,0.2); */
     cursor: pointer;
     transition: all 0.3s ease;
     gap: 12px;
@@ -462,7 +466,6 @@ ol,ul{
 
 .ul_links{
     width: 100%;
-    /* background-color:orange; */
     background: linear-gradient(to top, red, purple);
     position: absolute;
     top: 60px;
@@ -692,8 +695,10 @@ ol,ul{
 }
   
 .iconos img {
-    width: 180px; /* Ajusta según tu preferencia */
+    width: 160px; /* Ajusta según tu preferencia */
     height: auto;
+    padding: 1.2rem;
+    margin: auto;
 }
 
 .iconos :hover{
