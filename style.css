@@ -27,6 +27,7 @@
     .navbar{
         position: absolute;
         display: none;
+        max-width: 425px;
     }
     .navbar .active{
         display: block;    
@@ -37,6 +38,7 @@
         margin: 3rem 0;
     }
 
+   
     /* ---Encabezado */
     .home{
         width: 100%;
@@ -163,7 +165,10 @@
     }
 
     /* -------cuestionario */
-    
+    .form form{
+        max-width: 320px;
+    }
+ 
 }
 
 
@@ -241,14 +246,28 @@
        padding: 5px 10px; 
     }
     /* -------EDUCACION */
+    .form-1{
+        display: flex;
+        align-items: center;
+    }
     .checkpoint{
         display: flex;
-        max-width: 550px;
+        align-items: center;
+        max-width: 400px;
+        width: 100%;
         height: auto;
         padding-top: .5rem;
         padding-bottom: 1rem;
         position: relative;
     }
+
+    /* ---cuestionario */
+    .form form{
+        width: 550px; 
+        margin: 0;
+        padding: 0;
+     }
+    
 }
 
 @media(min-width:769px){ /*Acomodo para pantalla grande*/
@@ -272,7 +291,9 @@
         align-items: center;
         justify-content: center;
     }
-   
+   .hamburguesa{
+    display: none;
+   }
 
     /* ------------skills */
     .about {
@@ -336,10 +357,17 @@
     }
 
     /* -------cuestionario */
+
+    /* ----formulario */
+    .form form{
+        max-width: 800px;
+    }
 }
 
 /* ------------------------------------------------------------Sección de presentación */
 .header{
+    display: flex;
+    flex-wrap: wrap;
     position: fixed;
     opacity: 90%;
     top: 0;
@@ -370,9 +398,7 @@
 span{
     color: rgb(202, 19, 162);
 }
-
 .navbar a{
-  
     font-size: 20px;
     color: white;
     font-weight: 500;
@@ -403,7 +429,100 @@ span{
     box-shadow: 0 0 25px rgb(202, 19, 162);
     color: white;
 }
+/* Estilos del botón de hamburguesa */
+.menu_toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    /* border: 1px solid rgb(217, 217, 217); */
+    /* box-shadow: 0px 10px 20px 0 rgba(0,0,0,0.2); */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 12px;
+}
 
+.menu_toggle .line{
+    position: relative;
+    width: 60px;
+    height: 5px;
+    background-color: rgb(202, 19, 162);
+    border-radius: 10px;
+}
+
+ol,ul{
+    list-style: none;
+}
+.ham{
+    display: none;
+}
+
+.ul_links{
+    width: 100%;
+    /* background-color:orange; */
+    background: linear-gradient(to top, red, purple);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: all .3s;
+}
+.list_icon{
+    color: rgb(202, 19, 162);
+    cursor: pointer;
+}
+.ul_links a{
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    
+}
+
+
+.menu_toggle .line:nth-child(1){
+    top: 0;
+    transform: rotate(0);
+    transition: top 0.2 ease, transform 0.4s ease;
+}
+
+.menu_toggle .line:nth-child(2){
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease;
+}
+
+.menu_toggle .line:nth-child(2){
+    top: 0;
+    transform: rotate(0);
+    transition: top 0.2 ease, transform 0.4s ease;
+}
+/* animacion del boton */
+.menu_toggle.active .line:nth-child(1){
+    top: 18px;
+    transform: rotate(45deg);
+}
+.menu_toggle.active .line:nth-child(2){
+    opacity: 0;
+    visibility: hidden;
+}
+.menu_toggle.active .line:nth-child(3){
+    top: -16px;
+    transform: rotate(-45deg);
+}
+.ham:checked + .ul_links{
+    height: calc(100vh - 60px);
+}
+
+/* encabezado */
 .home{
     width: 100%;
     min-height: 100vh;
@@ -706,16 +825,7 @@ span{
     margin-bottom: 1em;
     font-size: 40px;
 }
-.timeline::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: fixed;
-}
+
 
 .timeline h2{
     margin-top: 1rem;
@@ -762,6 +872,7 @@ span{
 
 
 /* ------------------------------------------Sección de formulario */
+
 .form h2{
     text-align: center;
     margin-top: 3em;
@@ -770,7 +881,8 @@ span{
 }
 
 .form form{
-    max-width: 50em;
+   display: flex;
+   flex-direction: column;
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3em;

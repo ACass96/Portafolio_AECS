@@ -1,3 +1,10 @@
+// efecto del boton
+var menuToggle = document.querySelector('.menu_toggle');
+
+menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('active');
+})
+
 // Barra de navegación
 let progress = document.getElementById('progressbar');
 let totalHeight = document.body.scrollHeight - window.innerHeight;
@@ -13,26 +20,6 @@ var typed = new Typed(".multiple-text", {
     backDelay: 500,
     loop: true
 })
-
-// Botones cards ---hay que arreglar
-/*const btn = document.getElementsByClassName("btn")
-btn.forEach(btn => {
-    btn.addEventListener('click', function(e){
-        let x = e.clientX - e.target.offsetLeft;
-        let y = e.clientY - e.target.offsetTop;
-    
-        let ripples = document.createElement('span');
-        ripples.style.left = x + 'px';
-        ripples.style.top = y + 'px';
-        this.appendChild(ripples);
-    
-        setTimeout(() => {
-            ripples.remove()
-        }, 1000);
-    });
-
-})*/
-
 
 //Funcion para validar el formulario
 let btnEnviar = document.getElementById("btnEnviar");
