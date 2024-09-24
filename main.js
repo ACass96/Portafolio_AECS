@@ -116,7 +116,7 @@ btnEnviar.addEventListener("click", function(e) {
 
         // Parámetros para enviar el correo
         let templateParams = {
-            name: name,
+            from_name: name,
             email_id: email,
             phone: phone,
             message: message
